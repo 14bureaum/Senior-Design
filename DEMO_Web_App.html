@@ -2,6 +2,8 @@
 
 <html lang="en">
 <head>
+  <script src="bundle.js"></script>
+
   <meta charset="utf-8">
 
   <title>
@@ -24,15 +26,17 @@
   <a href="IR help page.html">IR</a>
 
 
-  <p id="Text" >Click button below to change the text color.<br></p>
-  <input type="button" value="Change Color" onclick="myFunction()" />
+  <p id="Text" >Click button below test IntToSerial.<br></p>
+  <input type="button" value="Send '1' to serial port" onclick="IntToSerial('1')" />
   
-  <!--
   <script>
-    function myFunction() {
-    document.getElementById("Text").style.color = "red";}
+    var SerialPort = require('serialport');
+
+    function IntToSerial(int) {
+      const port = new SerialPort('/pathto/usbname', {baudRate: 9600});
+      port.write(int);
+    }
   </script>
-  -->
 </body>
 
 </html>
