@@ -33,8 +33,13 @@
     var SerialPort = require('serialport');
 
     function IntToSerial(int) {
-      const port = new SerialPort('/pathto/usbname', {baudRate: 9600});
-      port.write(int);
+      var onGetDevices = function(ports) {
+  for (var i=0; i<ports.length; i++) {
+    console.log(ports[i].path);
+  }
+}
+chrome.serial.getDevices(onGetDevices);
+
     }
   </script>
 </body>
