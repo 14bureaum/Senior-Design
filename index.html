@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SmartStation Hub</title>
+	<style type='text/css'>
+	.colmask{
+	   position: relative;
+	   overflow: hidden;
+	   margin: 0px auto;
+	   width: 100%;
+	   background-color: #99ccff
+	}
+	.header{
+	   float: left;
+	   width: 100%;
+	   font-size: 40px;
+	   background-color: #EBCB2C
+	}
+	.colmid{
+	   position: relative;
+	   width: 100%;
+	   right: 33%;
+	   background-color: #b4d2f7
+	}
+	.colleft{
+	   position: relative;
+	   width: 100%;
+	   right: 33%;
+	   background-color: #b4d2f7
+	}
+	.col_LED{
+	   position: relative;
+	   overflow: hidden;
+	   float: left;
+	   width: 33%;
+	   left: 0%;
+	   background-color: #99ccff
+	}
+	.col_Power{
+	   position: relative;
+	   overflow: hidden;
+	   float: left;
+	   width: 34%;
+	   left: 67%;
+	   background-color: #99ccff
+	}
+	.col_IR{
+	   position: relative;
+	   overflow: hidden;
+	   float: left;
+	   width: 33%;
+	   left: 132%;
+	   background-color: #99ccff
+	}
+	.footer{
+	   float: left;
+	   width: 100%;
+	   background-color: #b4caf7
+	}
+	body {
+		padding: 0px;
+		margin: 0px;
+		font-size: 100%;
+		background-color: black
+	}
+
+	</style>
+	<metaname="viewport"content="width=device-width, initial-scale=1">
+	<script type="text/JavaScript" src="client.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<link type="text/css" rel ="stylesheet"href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
+</head>
+<body>
+	<div class="colmask">
+	
+		<div class="header">
+			<p align="center">Smart Station Controller<br></p>
+		</div>
+		
+		<div class="colmid">
+		
+		<div class="colleft">
+		
+			<div class="col_IR">
+				<center>
+					<form>
+						<font size="5">IR Remote Control<br><br></font>
+					</form><br>
+				</center>
+			</div>
+			
+			<div class="col_Power">
+				<center>
+					<form>
+						<font size="5">Smart Outlet Power Switch<br><br></font>
+						<input type="radio" name="switch" value="On" align="middle"> On<br>
+						<input type="radio" name="switch" value="Off" align="middle"> Off<br>
+					</form><br>
+				</center>
+			</div>
+			
+			<div class="col_LED">
+				<center>
+					<form>
+						<font size="5">LED Color Controller<br><br></font>
+						<p id="red">Red Integer Value:</p>
+						<input type="text" name="r" size="1" maxlength="3" id="r"><br>
+						
+						<p id="green">Green Integer Value:</p>
+						<input type="text" name="g" size="1" maxlength="3" id="g"><br>
+						
+						<p id="blue">Blue Integer Value:</p>
+						<input type="text" name="b" size="1" maxlength="3" id="b"><br>
+					</form><br>
+					<button onclick="LEDColor()">Enter</button>
+					
+				</center>
+				<br>
+			</div>
+			
+		</div> 
+		
+		</div>
+		
+		<div class="footer">
+			<p align="center">Drexel University Senior Design 2018/2019<br></p>
+		</div>
+	</div>
+</body>
+</html>
+<!--
+<script>
+function colorchange(r,g,b) {
+    Midterm_Web_App.getElementById("red").style.color = rgb(r,g,b);
+}
+</script>
+-->
