@@ -42,7 +42,7 @@ app.get('/records', function(req, res){
     //string to hold SQL query
     //Query sql DB for all records
     //query db for table data
-    console.log('printing records');
+    
     con.query('SELECT status FROM sd.employees' , function(err, rows, fields){
         if(err){
             console.log(err);
@@ -55,7 +55,7 @@ app.get('/records', function(req, res){
             outHTML += '</tr>'
             for(i=0; i<rows.length; i++){
                 if(rows[i]['status'] == 0){
-                    console.log('not ready')
+                    
                     notReady++
                 }else if(rows[i]['status'] == 1){
                     ready++
