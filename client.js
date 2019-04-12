@@ -2,7 +2,6 @@
 
 function records(){
     var URL = "http://localhost:8080/records";
-
     $.ajax({
         type: "GET",
         url: URL,
@@ -10,7 +9,7 @@ function records(){
         data: {},
         dataType: "html",
         success: function(msg){
-            document.getElementById("stats").innerHTML = msg
+            document.getElementById("output").innerHTML = msg
         },
         error: function(xhr, ajaxOptions, thrownError){
             document.getElementById("content").innerHTML = "Error obtaining transcript data";
@@ -20,7 +19,7 @@ function records(){
 
 function publish(){
     var URL = "http://localhost:8080/publish";
-
+    
     $.ajax({
         type: "GET",
         url: URL,
@@ -28,6 +27,7 @@ function publish(){
         data: {},
         dataType: "html",
         success: function(msg){
+            
             document.getElementById("stats").innerHTML = msg
         },
         error: function(xhr, ajaxOptions, thrownError){
