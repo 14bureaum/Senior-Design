@@ -211,6 +211,24 @@ app.get('/publish', function(req, res){
     })
 })
 
+
+app.get('/retrieve', function(req, res){
+    console.log("Retrieve clicked");
+    var txID = req.tx;
+
+    //url to get bigchain transaction
+    var url = '10.53.0.5:8080/ipfs/' + txID;
+
+    //request to get ipfshash from bigchaindb data
+    $.get('10.53.0.5:8080/ipfs/'+txID, function( data ) {
+        var ipfsHash = data;
+
+        $get('10.53.0.5:5001/')
+    });
+
+
+
+}
 // app.get('/reset', function(req, res){
 //     //string to hold SQL query
 //     //Query sql DB for all records
